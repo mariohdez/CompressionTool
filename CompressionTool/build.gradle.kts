@@ -21,4 +21,7 @@ dependencies {
 
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
+    testLogging {
+        events("failed")
+    }
 }
