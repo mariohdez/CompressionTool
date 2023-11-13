@@ -1,0 +1,2 @@
+# CompressionTool
+Huffman Encoding/Decoding
