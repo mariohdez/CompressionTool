@@ -6,6 +6,9 @@ import java.util.Map;
 public class HuffmanTree {
     private Map<Character, Integer> characterToFrequencyMap = new HashMap<>();
 
+    public void buildHuffmanTree() {
+    }
+
     public void updateCharacterFrequency(String line) {
         for (char c : line.toCharArray()) {
             int freq = characterToFrequencyMap.getOrDefault(c, 0).intValue();
