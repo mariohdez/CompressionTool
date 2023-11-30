@@ -4,9 +4,6 @@ import org.example.DataStructures.HuffmanTree;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class HuffmanTreeTest {
     @Test
     public void getCharacterFrequencyWhenCharacterDoesNotExistReturnsNegativeOne() {
@@ -38,5 +35,33 @@ public class HuffmanTreeTest {
         Assertions.assertEquals(1, tree.getCharactersFrequency(a));
         Assertions.assertEquals(2, tree.getCharactersFrequency(exPoint));
         Assertions.assertEquals(2, tree.getCharactersFrequency(question));
+    }
+
+    @Test
+    public void buildTreeHappyPath() {
+        String str = "AABCBAD";
+        HuffmanTree huffmanTree = new HuffmanTree();
+        huffmanTree.updateCharacterFrequency(str);
+
+        // Act.
+        huffmanTree.buildHuffmanTree();
+
+        // Assert.
+        String encoding = huffmanTree.encode(str);
+
+        String decodedStr = huffmanTree.decode(encoding);
+        Assertions.assertEquals(str, decodedStr);
+    }
+
+    @Test
+    public void DecodeWhenValidReturnsDecodedString() {
+        String str = "HElLLLOOO12312121212121";
+        var huffmanTree = new HuffmanTree();
+        huffmanTree.updateCharacterFrequency(str);
+        huffmanTree.buildHuffmanTree();
+        String encoding = huffmanTree.encode(str);
+
+        String decodedStr = huffmanTree.decode(encoding);
+        Assertions.assertEquals(str, decodedStr);
     }
 }

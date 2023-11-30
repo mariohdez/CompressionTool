@@ -5,6 +5,6 @@ import java.util.Comparator;
 public class HuffmanTreeNodeComparator implements Comparator<HuffmanTreeNode> {
     @Override
     public int compare(HuffmanTreeNode a, HuffmanTreeNode b) {
-        return a.frequency() - b.frequency();
+        return a.frequency()-b.frequency();
     }
 }
